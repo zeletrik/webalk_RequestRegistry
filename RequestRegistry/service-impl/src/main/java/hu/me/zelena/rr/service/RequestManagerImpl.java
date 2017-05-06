@@ -1,12 +1,11 @@
 package hu.me.zelena.rr.service;
 
-import java.util.List;
-
+import hu.me.zelena.rr.dao.RequestDAO;
+import hu.me.zelena.rr.model.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import hu.me.zelena.rr.dao.RequestDAO;
-import hu.me.zelena.rr.model.Request;
+import java.util.List;
 
 @Service
 public class RequestManagerImpl implements RequestManager {
@@ -45,6 +44,16 @@ public class RequestManagerImpl implements RequestManager {
 	public void makeVerdict(int id, String verdict) {
 		dao.makeVerdict(id, verdict);
 
+	}
+
+	@Override
+	public void forward(int id, String admin) {
+		dao.forward(id, admin);
+	}
+
+	@Override
+	public void addComment(int id, String comment) {
+		dao.addComment(id, comment);
 	}
 
 }

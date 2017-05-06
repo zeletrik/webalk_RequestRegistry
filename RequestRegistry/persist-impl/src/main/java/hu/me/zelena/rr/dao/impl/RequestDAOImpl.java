@@ -1,15 +1,13 @@
 package hu.me.zelena.rr.dao.impl;
 
-import java.util.List;
+import hu.me.zelena.rr.dao.RequestDAO;
+import hu.me.zelena.rr.model.Request;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-
-import org.springframework.stereotype.Repository;
-
-import hu.me.zelena.rr.model.Request;
-import hu.me.zelena.rr.dao.RequestDAO;
+import java.util.List;
 
 @Repository
 @Transactional
@@ -21,7 +19,7 @@ public class RequestDAOImpl implements RequestDAO {
 	@Override
 	public List<Request> findAll() {
 		List<Request> requests =
-				manager.createQuery("Select p From Request p", Request.class).getResultList();
+				manager.createQuery("Select p From hu.me.zelena.rr.model.Request p", Request.class).getResultList();
 		return requests;
 	}
 
@@ -53,6 +51,18 @@ public class RequestDAOImpl implements RequestDAO {
 		Request req = manager.find(Request.class, id);
 		req.setStatus(verdict);
 
+	}
+
+	@Override
+	public void forward(int id, String admin) {
+		Request req = manager.find(Request.class, id);
+		req.setReviewer(admin);
+	}
+
+	@Override
+	public void addComment(int id, String comment) {
+		Request req = manager.find(Request.class, id);
+		req.setStatus(comment);
 	}
 
 }

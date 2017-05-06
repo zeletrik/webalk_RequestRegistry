@@ -13,4 +13,7 @@ public interface RequestManager {
 	public void deleteRequest(Request request);
 	public void makeVerdict(int id, String verdict);
 
+	public void forward(int id, String admin);
+
+	public void addComment(int id, String comment);
 }

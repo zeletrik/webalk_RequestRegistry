@@ -1,8 +1,8 @@
 package hu.me.zelena.rr.dao;
 
-import java.util.List;
-
 import hu.me.zelena.rr.model.Request;
+
+import java.util.List;
 
 public interface RequestDAO {
 	
@@ -13,4 +13,7 @@ public interface RequestDAO {
 	public void deleteRequest(Request request);
 	public void makeVerdict(int id, String verdict);
 
+	public void forward(int id, String admin);
+
+	public void addComment(int id, String comment);
 }
