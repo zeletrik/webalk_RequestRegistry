@@ -21,7 +21,7 @@ public class MainController {
 
 	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
 	public ModelAndView defaultPage(Principal principal) {
-		
+		System.out.println("TESZT");
 		String name = principal.getName();
 
 		ModelAndView model = new ModelAndView();
@@ -47,7 +47,7 @@ public class MainController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
-
+		System.out.println("TESZT");
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
 			model.addObject("error", "Invalid username and password!");

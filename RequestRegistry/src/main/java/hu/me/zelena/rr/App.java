@@ -16,7 +16,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 @ComponentScan(basePackages={"hu.me.zelena.rr"})
 @EntityScan(basePackages="hu.me.zelena.model")
-@EnableAutoConfiguration
 public class App extends SpringBootServletInitializer{
 	
 	public static void main(String[] args) {
