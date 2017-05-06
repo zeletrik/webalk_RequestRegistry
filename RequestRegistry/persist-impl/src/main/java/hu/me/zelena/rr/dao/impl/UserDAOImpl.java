@@ -1,15 +1,13 @@
 package hu.me.zelena.rr.dao.impl;
 
-import java.util.List;
+import hu.me.zelena.rr.dao.UserDAO;
+import hu.me.zelena.rr.model.User;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-
-import org.springframework.stereotype.Repository;
-
-import hu.me.zelena.rr.dao.UserDAO;
-import hu.me.zelena.rr.model.User;
+import java.util.List;
 
 @Repository
 @Transactional
@@ -20,8 +18,8 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public List<User> findAll() {
-		List<User> users = 
-				manager.createQuery("Select p From User p", User.class).getResultList();
+		List<User> users =
+				manager.createQuery("Select u From hu.me.zelena.rr.model.User u", User.class).getResultList();
 	return users;
 	}
 

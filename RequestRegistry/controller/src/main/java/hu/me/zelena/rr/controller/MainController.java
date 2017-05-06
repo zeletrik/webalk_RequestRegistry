@@ -1,10 +1,5 @@
 package hu.me.zelena.rr.controller;
 
-import java.security.Principal;
-import java.util.Map;
-
-
-
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.security.Principal;
+import java.util.Map;
 
 
 @Controller
@@ -66,6 +64,8 @@ public class MainController {
 	@RequestMapping(value = "/403", method = RequestMethod.GET)
 	public ModelAndView accesssDenied() {
 
+        System.out.print("DEBUG");
+
 		ModelAndView model = new ModelAndView();
 		
 		//check if user is login
@@ -90,6 +90,5 @@ public class MainController {
 		model.put("message", "This page is for ROLE_ADMIN only!");
 		return "hello";
 	}
-
 
 }

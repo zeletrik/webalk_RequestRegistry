@@ -1,8 +1,8 @@
 package hu.me.zelena.rr.service;
 
-import java.util.List;
-
 import hu.me.zelena.rr.model.User;
+
+import java.util.List;
 
 public interface UserManager {
 	
