@@ -22,12 +22,12 @@ Technológia: Spring Boot
 Adatbázis: MariaDB (RDBMS)
 
 
-A feladat megvalósításához először a felhasználói hozzáféréseket hoztam létre. Három role került az adatbázisba. Így mindenki csak asaját jogosultságának megfelelő funkciókat ér el. 
+A feladat megvalósításához először a felhasználói hozzáféréseket hoztam létre. Három role került az adatbázisba. Így mindenki csak a saját jogosultságának megfelelő funkciókat éri el. 
 Az authentikóció megvalósítása Spring Security segítségével  történt.
-Az alkalmazás Maven multi-module alkalamzás. A szülő projekt tartalmazza a 8 belső modult amig az alkalamzás pontos műküdéséért felelősek.
-Az adatbázis kapcsolat JPA és hybernate technológiákkal lett megvalósítva.
+Az alkalmazás Maven multi-module alkalamzás. A szülő projekt tartalmazza a 8 belső modult amik az alkalamzás pontos műküdéséért felelősek.
+Az adatbázis kapcsolat JPA és Hibernate technológiákkal lett megvalósítva.
 Front-end be- és kilépésre is van lehetősége a felhasználónak így a Thymeleaf, template kezelő is a rendszer része.
-Minden ROLE-hoz külön RestControllel tartozik amely a JSON fájlok előáálításáért és fogadásáért a felelős.
+Minden ROLE-hoz külön RestControllel tartozik amely a JSON fájlok előállításáért és fogadásáért a felelős.
 Létezik egy elsődleges kontrollel ami a böngészéből való belépésért felelős.
 
 Az alkalamzás a következő URL-eken kersztül  kommunikál:
