@@ -1,8 +1,7 @@
-# webalk_RequestRegistry
 
-WEB-es alkalmazások (GEIAL333B)
+# WEB-es alkalmazások (GEIAL333B)
 
-2017. 05
+2017.05
 
 Zelena Patrik Gergő (W137BJ)
 
