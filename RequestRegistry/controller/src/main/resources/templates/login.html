@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+>
+<head>
+    <title>Login Page</title>
+    <style>
+        #error {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+
+        #msg {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: #31708f;
+            background-color: #d9edf7;
+            border-color: #bce8f1;
+        }
+
+        #login-box {
+            width: 300px;
+            padding: 20px;
+            margin: 100px auto;
+            background: #fff;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body onload='document.loginForm.username.focus();'>
+
+<div class="page-header" style="text-align: center;">
+    <h1>Request Registry
+        <small style="color: #aaaaaa;">by ZPatrik94</small>
+    </h1>
+</div>
+
+<div id="login-box">
+
+    <div th:if="${param.error}">
+        <p id="error" th:text=" ${error} "></p>
+    </div>
+    <div th:if="${param.logout}">
+        <p id="msg" th:text=" ${msg} "></p>
+    </div>
+
+    <h3 style="text-align: center; ">Login:</h3>
+
+    <form name='loginForm'
+          th:action="@{/login}"
+          method='POST'>
+
+        <table width="100%">
+            <tr>
+
+                <td align="center" style="padding-bottom: 5px; padding-top: 5px;">
+                    <div>
+                        <input type='text' name='username' placeholder="Username"/>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td align="center" style="padding-bottom: 5px">
+                    <input type='password' name='password' placeholder="Password"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: center;" colspan='2'>
+                    <input name="submit" type="submit"
+                           value="Sign In"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

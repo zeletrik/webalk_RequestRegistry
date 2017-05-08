@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+>
+<body>
+<h1>HTTP Status 403 - Access is denied</h1>
+
+<div th:if="${username}">
+    <h2 th:text="'User: ' + ${username}"></h2>
+</div>
+<h2>You do not have permission to access this page!</h2>
+
+</body>
+</html>

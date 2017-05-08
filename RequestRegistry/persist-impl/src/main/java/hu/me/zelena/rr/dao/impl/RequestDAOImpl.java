@@ -12,57 +12,58 @@ import java.util.List;
 @Repository
 @Transactional
 public class RequestDAOImpl implements RequestDAO {
-	
-	@PersistenceContext
-	private EntityManager manager;
 
-	@Override
-	public List<Request> findAll() {
-		List<Request> requests =
-				manager.createQuery("Select p From hu.me.zelena.rr.model.Request p", Request.class).getResultList();
-		return requests;
-	}
+    @PersistenceContext
+    private EntityManager manager;
 
-	@Override
-	public Request findByUser(String username) {
-		Request req = manager.createQuery("SELECT c from Request c WHERE c.user LIKE ?", Request.class).setParameter(1, username).getSingleResult();
-		return req;
-	}
+    @Override
+    public List<Request> findAll() {
+        List<Request> requests =
+                manager.createQuery("Select p From hu.me.zelena.rr.model.Request p", Request.class).getResultList();
+        return requests;
+    }
 
-	@Override
-	public Request find(int id) {
-		return manager.find(Request.class, id);
-	}
+    @Override
+    public List<Request> findByUser(String username) {
+        List<Request> requests
+                = manager.createQuery("SELECT c from Request c WHERE c.user LIKE ?", Request.class).setParameter(1, username).getResultList();
+        return requests;
+    }
 
-	@Override
-	public void createRequest(Request request) {
-		manager.persist(request);
+    @Override
+    public Request find(int id) {
+        return manager.find(Request.class, id);
+    }
 
-	}
+    @Override
+    public void createRequest(Request request) {
+        manager.persist(request);
 
-	@Override
-	public void deleteRequest(Request request) {
-		manager.remove(request);
+    }
 
-	}
+    @Override
+    public void deleteRequest(Request request) {
+        manager.remove(request);
 
-	@Override
-	public void makeVerdict(int id, String verdict) {
-		Request req = manager.find(Request.class, id);
-		req.setStatus(verdict);
+    }
 
-	}
+    @Override
+    public void makeVerdict(int id, String verdict) {
+        Request req = manager.find(Request.class, id);
+        req.setStatus(verdict);
 
-	@Override
-	public void forward(int id, String admin) {
-		Request req = manager.find(Request.class, id);
-		req.setReviewer(admin);
-	}
+    }
 
-	@Override
-	public void addComment(int id, String comment) {
-		Request req = manager.find(Request.class, id);
-		req.setStatus(comment);
-	}
+    @Override
+    public void forward(int id, String admin) {
+        Request req = manager.find(Request.class, id);
+        req.setReviewer(admin);
+    }
+
+    @Override
+    public void addComment(int id, String comment) {
+        Request req = manager.find(Request.class, id);
+        req.setStatus(comment);
+    }
 
 }

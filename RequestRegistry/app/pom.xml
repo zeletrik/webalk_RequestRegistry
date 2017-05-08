@@ -1,98 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
-	<modelVersion>4.0.0</modelVersion>
-	
-  <parent>
-    <groupId>hu.me.zelena</groupId>
-    <artifactId>RequestRegistry</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
 
-  <artifactId>app</artifactId>
+    <modelVersion>4.0.0</modelVersion>
 
-  <properties>
-    <spring-version>1.5.2.RELEASE</spring-version>
-  </properties>
-  
-  <dependencies>
-	<dependency>
-			<groupId>hu.me.zelena</groupId>
-			<artifactId>util</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-      <dependency>
-          <groupId>hu.me.zelena</groupId>
-          <artifactId>model</artifactId>
-          <version>0.0.1-SNAPSHOT</version>
-      </dependency>
-		<dependency>
-			<groupId>hu.me.zelena</groupId>
-			<artifactId>controller</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-  		</dependency>
-  		<dependency>
-			<groupId>hu.me.zelena</groupId>
-			<artifactId>service</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-  		</dependency>
-      <dependency>
-          <groupId>hu.me.zelena</groupId>
-          <artifactId>service-impl</artifactId>
-          <version>0.0.1-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-          <groupId>hu.me.zelena</groupId>
-          <artifactId>persist</artifactId>
-          <version>0.0.1-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-          <groupId>hu.me.zelena</groupId>
-          <artifactId>persist-impl</artifactId>
-          <version>0.0.1-SNAPSHOT</version>
-      </dependency>
-  		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>${spring-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<version>${spring-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<version>${spring-version}</version>
-		</dependency>
-			<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<version>${spring-version}</version>
-		</dependency>
-  </dependencies>
-  
-  <build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			
-			 <plugin>
-    			<groupId>org.apache.maven.plugins</groupId>
-   				 <artifactId>maven-compiler-plugin</artifactId>
-  					  <version>3.1</version>
-    			<configuration>
-       				 <source>1.8</source>
-       				 <target>1.8</target>
-    			</configuration>
-			</plugin>
-		</plugins>
-	</build>
-    
+    <parent>
+        <groupId>hu.me.zelena</groupId>
+        <artifactId>RequestRegistry</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>app</artifactId>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>hu.me.zelena</groupId>
+            <artifactId>util</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>hu.me.zelena</groupId>
+            <artifactId>model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>hu.me.zelena</groupId>
+            <artifactId>controller</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>hu.me.zelena</groupId>
+            <artifactId>service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>hu.me.zelena</groupId>
+            <artifactId>service-impl</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>hu.me.zelena</groupId>
+            <artifactId>persist</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>hu.me.zelena</groupId>
+            <artifactId>persist-impl</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

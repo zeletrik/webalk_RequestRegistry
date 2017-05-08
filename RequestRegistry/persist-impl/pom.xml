@@ -9,19 +9,19 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-  <artifactId>persist-impl</artifactId>
-  
-  <dependencies>
-	<dependency>
-			<groupId>hu.me.zelena</groupId>
-			<artifactId>model</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  		<dependency>
-			<groupId>hu.me.zelena</groupId>
-			<artifactId>persist</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  </dependencies>
-  
+    <artifactId>persist-impl</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>hu.me.zelena</groupId>
+            <artifactId>model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>hu.me.zelena</groupId>
+            <artifactId>persist</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+>
+<body>
+<h1 th:text="'Title : ' + ${title}"></h1>
+<h2 th:text="'Message : ' + ${message}"></h2>
+
+
+<form th:action="@{logout}" method="post" id="logoutForm">
+</form>
+<script>
+    function formSubmit() {
+        document.getElementById("logoutForm").submit();
+    }
+</script>
+
+
+<h3 th:text="'User : ' + ${user} "></h3>
+<h3><a href="javascript:formSubmit()"> Logout</a></h3>
+
+</body>
+</html>

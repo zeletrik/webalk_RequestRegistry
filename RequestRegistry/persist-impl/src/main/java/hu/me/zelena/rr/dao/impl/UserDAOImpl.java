@@ -12,32 +12,37 @@ import java.util.List;
 @Repository
 @Transactional
 public class UserDAOImpl implements UserDAO {
-	
-	@PersistenceContext
-	private EntityManager manager;
 
-	@Override
-	public List<User> findAll() {
-		List<User> users =
-				manager.createQuery("Select u From hu.me.zelena.rr.model.User u", User.class).getResultList();
-	return users;
-	}
+    @PersistenceContext
+    private EntityManager manager;
 
-	@Override
-	public User findByName(String name) {
-		return manager.find(User.class, name);
-	}
+    @Override
+    public List<User> findAll() {
+        List<User> users =
+                manager.createQuery("Select u From hu.me.zelena.rr.model.User u", User.class).getResultList();
+        return users;
+    }
 
-	@Override
-	public void insertUser(User user) {
-		manager.persist(user);
+    @Override
+    public User findByName(String name) {
+        return manager.find(User.class, name);
+    }
 
-	}
+    @Override
+    public void insertUser(User user) {
+        manager.persist(user);
 
-	@Override
-	public void deleteUser(User user) {
-		manager.remove(user);
+    }
 
-	}
+    @Override
+    public void deleteUser(User user) {
+        manager.remove(user);
+
+    }
+
+    @Override
+    public void updateUser(User user) {
+        manager.merge(user);
+    }
 
 }
