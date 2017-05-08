@@ -1,19 +1,27 @@
 # webalk_RequestRegistry
 
 WEB-es alkalmazások (GEIAL333B)
+
 2017. 05
+
 Zelena Patrik Gergő (W137BJ)
 
 Kérvény Nyilvántartó Rendszer
+
 A feladat célja egy olyan rendszer fejlesztése ami lehetővé teszi a hallgatói kérvények online ügyintézését.
 
 A feladat megvalósítása:
 
 Környezet:
+
 OS: Arch Linux
+
 IDE: IntelliJ
+
 Technológia: Spring Boot
+
 Adatbázis: MariaDB (RDBMS)
+
 
 A feladat megvalósításához először a felhasználói hozzáféréseket hoztam létre. Három role került az adatbázisba. Így mindenki csak asaját jogosultságának megfelelő funkciókat ér el. 
 Az authentikóció megvalósítása Spring Security segítségével  történt.
